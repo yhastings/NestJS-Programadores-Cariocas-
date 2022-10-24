@@ -12,6 +12,6 @@ export class Tema {
     @Column({length: 255, nullable:false})
     descricao: string 
 
-    @OneToMany(() => Postagem, (Postagem) => Postagem.id)
+    @OneToMany(() => Postagem, (postagem) => postagem.tema)
     postagem: Postagem[]
 }

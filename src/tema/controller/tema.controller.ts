@@ -14,8 +14,6 @@ export class TemaController {
         return this.temaService.findAll();
     }
   
-
-
     @Get('/:id')
     @HttpCode(HttpStatus.OK)
     findById(@Param('id', ParseIntPipe) id: number): Promise<Tema> {
@@ -34,8 +32,6 @@ export class TemaController {
     create(@Body() tema: Tema): Promise<Tema> {
         return this.temaService.create(tema)
     }
-
-
 
     @Put()
     @HttpCode(HttpStatus.OK)

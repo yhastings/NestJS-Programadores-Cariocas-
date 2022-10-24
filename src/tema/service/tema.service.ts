@@ -19,8 +19,6 @@ export class TemaService {
     }
 
 
-    
-
     async findById(id: number): Promise<Tema> {
 
         let tema = await this.temaRepository.findOne({
