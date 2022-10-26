@@ -11,8 +11,7 @@ export class AuthService {
         private bcrypt: Bcrypt
     ) { }
 
-
-    async validarUsuario(username: string): Promise<any> {
+    async validarUsuario(username: string, password: string): Promise<any> {
         const buscarUsuario = await this.usuarioService.findByUsuario(username)
 
         if (!buscarUsuario)

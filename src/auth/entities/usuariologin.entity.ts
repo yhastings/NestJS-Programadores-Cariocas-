@@ -1,7 +1,7 @@
 export class UsuarioLogin {
 
-    public usuario: string
+    usuario: string
 
-    public  senha: string 
-    
+    senha: string
+
 }
