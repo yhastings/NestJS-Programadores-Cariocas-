@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { AppController } from './app.controller';
 import { AuthModule } from './auth/auth.module';
 import { Postagem } from './postagem/entities/postagem.entity';
 import { PostagemModule } from './postagem/postagem.module';
@@ -27,7 +28,7 @@ import { UsuarioModule } from './usuario/usuario.module';
       UsuarioModule
   ],
 
-  controllers: [],
+  controllers: [AppController],
   providers: [],
 })
 export class AppModule { }
