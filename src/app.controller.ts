@@ -1,21 +1,16 @@
 import { Controller, Get } from '@nestjs/common';
-import { get } from 'http';
-import { AppService } from './app.service';
+import { Res } from '@nestjs/common/decorators';
+import { ApiExcludeEndpoint } from '@nestjs/swagger';
+
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor() {}
 
-  @Get('/nomeCurso') // endpoint
-  getHello(): string {
-    return this.appService.getHello();
+  @ApiExcludeEndpoint()
+  @Get()
+  async redirect(@Res() resposta: any){
+    return resposta.redirect('/swagger')
   }
-  @Get('/instrutores')
-  getInstrutores(): string {
-    return this.appService.getInstrutores();
-  }
-  @Get('/nomeCidade')
-  Cidade(): string {
-    return this.appService.getCidade();
-  }
+  
 }
